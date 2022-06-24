@@ -1,6 +1,5 @@
 const { INTEGER } = require('sequelize');
 const { Model, DataTypes } = require('sequelize');
-const { DefaultSerializer } = require('v8');
 const sequelize = require('../config/connections');
 
 class Comment extends Model {}
@@ -33,7 +32,7 @@ Comment.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [2,255]
+                len: [1,255]
             }
         }
     },
