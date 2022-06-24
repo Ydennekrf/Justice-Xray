@@ -23,12 +23,12 @@ const commentSeed = [
     },
     {
         user_id: 1,
-        post_id: 2,
+        post_id: 5,
         comment_txt: " here is another comment about stuff and things!"
     },
     {
         user_id: 3,
-        post_id: 2,
+        post_id: 4,
         comment_txt: "blah blah blah blah blah blah blah its a comment"
     },
     {
@@ -40,4 +40,4 @@ const commentSeed = [
 
 const commentSeeding = () => Comment.bulkCreate(commentSeed);
 
-module.exports = commentSeeding
+module.exports = commentSeeding;
