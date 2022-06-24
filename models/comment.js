@@ -1,4 +1,3 @@
-const { INTEGER } = require('sequelize');
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connections');
 
@@ -21,7 +20,7 @@ Comment.init(
             }
         },
         post_id: {
-            type: DataTypes:INTEGER,
+            type: DataTypes.INTEGER,
             allowNull: false,
             referenses: {
                 model: 'post',

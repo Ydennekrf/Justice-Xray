@@ -4,6 +4,7 @@ const routes = require('./controllers');
 const sequelize = require('./config/connections');
 const path = require('path');
 const hbs = exphbs.create({});
+const utils = require('./utils/authenticate')
 
 
 
