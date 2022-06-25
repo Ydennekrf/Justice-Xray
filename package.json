@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed": "node seeds/index.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,6 @@
   "homepage": "https://github.com/Ydennekrf/Justice-Xray#readme",
   "dependencies" : {
     "bcrypt": "^5.0.0",
-    "bulma": "^0.9.0",
     "connect-session-sequelize": "^6.1.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
@@ -28,8 +28,4 @@
     "mysql2": "^2.1.0",
     "nodemon": "^2.0.4",
     "sequelize": "^5.21.13"
-  },
-  "devDependencies": {
-    "@creativebulma/bulma-divider": "^1.1.0"
-  }
-}
+  }}
