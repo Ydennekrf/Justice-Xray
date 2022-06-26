@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connections');
 const { Post, User, Comment } = require('../models');
-
+// localhost:3001/
 // renders home page
 router.get('/', (req, res) => {
     console.log(req.body)
@@ -34,6 +34,7 @@ router.get('/', (req, res) => {
         res.status(500).json(err);
     })
 });
+// localhost:3001/login
 // takes you to login page
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
@@ -42,6 +43,7 @@ router.get('/login', (req, res) => {
     }
     res.render('login');
 });
+// localhost:3001/newUser
 // takes you to new user page
 router.get('/newUser', (req, res) => {
     if(req.session.loggedIn) {
@@ -50,7 +52,7 @@ router.get('/newUser', (req, res) => {
     }
     res.render('createUser');
 });
-
+// localhost:3001/post/
 router.get('/post/:id', (req, res) => {
     Post.findOne({
         where: {
@@ -75,7 +77,7 @@ router.get('/post/:id', (req, res) => {
             res.status(404).json({ message: 'id not found'});
             return;
         }
-        res.render('newPost', {
+        res.render('singlePost', {
             post, loggedIn: req.session.loggedIn
         });
     }).catch(err => {
