@@ -77,6 +77,7 @@ router.get('/post/:id', (req, res) => {
             res.status(404).json({ message: 'id not found'});
             return;
         }
+        const post = dbPost.get({ plain: true }); 
         res.render('singlePost', {
             post, loggedIn: req.session.loggedIn
         });

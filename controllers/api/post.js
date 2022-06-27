@@ -7,10 +7,11 @@ const auth = require('../../utils/authenticate');
 router.get('/', (req,res) => {
     Post.findAll({
         attributes: ['id','title','post_txt'],
+        order: [[ 'created_at', 'DESC']],
         include: [
             {
                 model: Comment,
-                attributes: ['id', 'comment_txt', 'post_id', 'user_id'],
+                attributes: ['id', 'comment_txt', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: User,
                     attributes: ['username']
@@ -35,13 +36,13 @@ router.get('/:id', (req,res) => [
         where: {
             id: req.params.id
         },
-        attributes: ['id', 'title', 'post_txt'],
+        attributes: ['id', 'title', 'post_txt', 'created_at'],
         include: [{
             model: User,
             attributes: ['username']
         },{
         model: Comment,
-        attributes: ['id', 'comment_txt', 'post_id', 'user_id'],
+        attributes: ['id', 'comment_txt', 'post_id', 'user_id', 'created_at'],
         include: {
             model: User,
             attributes: ['username']
@@ -61,7 +62,7 @@ router.get('/:id', (req,res) => [
         })  
 ]);
 
-router.get('/', auth, (req, res) => {
+router.post('/', auth, (req, res) => {
     Post.create({
         title: req.body.title,
         post_txt: req.body.post_txt,
