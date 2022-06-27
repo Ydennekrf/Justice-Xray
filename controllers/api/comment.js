@@ -33,7 +33,7 @@ router.delete('/:id', auth, (req,res) => {
         }
     })
     .then(dbcomment => {
-        if (dbcomment === false) {
+        if (!dbcomment) {
             res.status(404).json({ message: 'id not found' });
             return;
         }

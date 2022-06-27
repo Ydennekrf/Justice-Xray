@@ -51,7 +51,7 @@ router.get('edit/:id', auth, (req,res) => {
         }]
     })
     .then(dbpost => {
-        if(dbpost === false) {
+        if(!dbpost) {
             res.status(404).json({ message: 'id not found' });
             return;
         }

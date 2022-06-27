@@ -73,7 +73,7 @@ router.get('/post/:id', (req, res) => {
     }]
     })
     .then(dbPost => {
-        if (dbPost === false) {
+        if (!dbPost) {
             res.status(404).json({ message: 'id not found'});
             return;
         }
