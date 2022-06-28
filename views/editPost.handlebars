@@ -1,0 +1,28 @@
+<div class="post-card">
+<h2 class="head-text post-header">Edit Post</h2>
+<form>
+    <div class="form-group">
+    <label for="post-title">Post title</label>
+    <input type="text" class="form-control" id="post-title" placeholder="{{post.title}}">
+  </div>
+  <div class="form-group">
+    <label for="post-txt">Post content</label>
+    <input type="text" class="form-control" id="post-txt" placeholder="{{post.post_txt}}">
+  </div>
+  <div>
+    <a href="/post/{{post.id}}">Comment</a>
+  </div>
+  <div>
+    <button type="submit" class="btn btn-warning">save post</button>
+    <button type="button" class="btn btn-danger">delete post</button>
+  </div>
+  
+</form>
+</div>
+
+{{> comment post.comment}}
+
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/deletePost.js"></script>
+<script src="/javascript/comment.js"></script>

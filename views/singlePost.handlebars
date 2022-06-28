@@ -1,0 +1,18 @@
+{{>postinfo post}}
+{{#if loggedIn}}
+<form class="post-card">
+    <div>
+        <textarea name="comment-body"></textarea>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-warning">add comment</button>
+    </div>
+</form>
+
+{{/if}}
+
+{{> comment post.comment}}
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}
