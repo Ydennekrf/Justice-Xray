@@ -1,0 +1,33 @@
+.comment-card {
+    width: 18rem; border:2px outset rgba(34, 34, 34, 0.634);border-radius: 20px; margin: 20px;
+}
+.comment-header {
+    background-color:rgb(255, 126, 71);border-radius: 20px; box-shadow: 0px 5px 5px grey;
+}
+
+.post-card {
+    width: 25rem; border:2px outset rgba(34, 34, 34, 0.634);border-radius: 20px; margin: 20px;
+}
+.post-header {
+    background-color:rgb(255, 206, 71);border-radius: 20px; box-shadow: 0px 5px 5px grey;
+}
+
+.button {
+    background-color:rgb(71, 108, 255);border-radius: 20px; box-shadow: 0px 5px 5px grey;
+}
+
+.header {
+    background-color: #36a885e5;
+    box-shadow: 0px 10px 5px #7a8c8ac2;
+}
+.jumbo {
+    background-color: #36a885e5;
+}
+
+body {
+    background-color: #abfce4e7;
+}
+
+.head-text {
+    font-weight: bold;
+}

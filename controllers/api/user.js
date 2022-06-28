@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const {User, Post, Comment} = require('../../models');
 const auth = require('../../utils/authenticate');
+const bcrypt = require('bcrypt');
 // gets all users
 router.get('/', (req,res) => {
     User.findAll({})
@@ -22,7 +23,7 @@ router.get('/:id', (req,res) => {
             attributes: ['id', 'title', 'post_txt', 'created_at']
         },{
             model: Comment,
-            attributes: ['id', 'title', 'post_txt', 'created_at'],
+            attributes: ['id', 'comment_txt','created_at'],
             include: {
                 model: Post,
                 attributes: ['title']
@@ -63,7 +64,7 @@ router.post('/', auth, (req,res) => {
 });
 // creates session cookie for log in
 router.post('/login', (req, res) => {
-    User.findOne({
+  User.findOne({
         where: {
             email: req.body.email
         }
@@ -73,7 +74,13 @@ router.post('/login', (req, res) => {
             res.status(400).json({ message: 'email not found' });
             return;
         }
-        const validatePass = dbUser.checkPassword(req.body.password);
+        console.log(req.body.password)
+        
+        const validatePass = bcrypt.compare(
+            req.body.password,
+            dbUser.password
+        );
+        // const validatePass = dbUser.checkPassword(req.body.password);
         if(!validatePass) {
             res.status(400).json({ message: 'password is incorrect' });
             return;

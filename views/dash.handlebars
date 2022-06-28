@@ -1,0 +1,19 @@
+<div>
+<h2 class="head-text">dashboard: your posts</h2>
+<a href="/views/newPost.handlebars"><button type="button" class="btn btn-primary button">New Post</button></a>
+
+{{#if posts.length}}
+</div>
+
+{{#each posts as |post|}}
+{{>post-info post}}
+
+<a href="/dashboard/edit/{{post.id}}"><button type="button" class="btn btn-warning">Edit post</button></a>
+</div>
+    
+{{/each}}
+
+{{else}}
+<p class="align-text-center">No current posts, create a new post!</p>
+
+{{/if}}
