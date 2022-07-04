@@ -5,7 +5,7 @@ const sequelize = require('./config/connections');
 const path = require('path');
 const helpers = require('./utils/helpers')
 const hbs = exphbs.create({ helpers });
-const utils = require('./utils/authenticate')
+const auth = require('./utils/authenticate')
 const session = require('express-session');
 
 const app = express();

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>tech blog</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="../../public/css/style.css">
+  <link rel="stylesheet" type="css" href="../../public/css/style.css">
 </head>
 
 <body>
@@ -23,27 +23,16 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       {{#if loggedIn}}
-      <a class="nav-link active" href="#">dashboard</a>
-      <a class="nav-link" href="#">new post</a>
-      <a class="nav-link" href="#">log out</a>
-      {{#else}}
-      <a class="nav-link" href="#">login</a>
-      <a class="nav-link" href="#">sign up</a>
+      <a class="nav-link active" href="../dash">dashboard</a>
+      <a class="nav-link" href="../newPost">new post</a>
+      <a class="nav-link logout" href="./main">log out</a>
+      {{else}}
+      <a class="nav-link" href="../login">login</a>
+      <a class="nav-link" href="../createUser">sign up</a>
+      {{/if}}
     </div>
   </div>
 </nav>
-  <nav>
-    {{#if loggedIn}}
-    <a href="">Home</a>
-    <a href="">dashboard</a>
-    <a href="">new post</a>
-    <a href="">log out</a>
-    {{#else}}
-    <a href="">Home</a>
-    <a href="">login</a>
-    <a href="">sign up</a>  
-    {{/if}}
-  </nav>
   <main>
     <div>
       {{{body}}}
