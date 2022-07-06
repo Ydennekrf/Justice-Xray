@@ -1,7 +1,7 @@
 //taken from activity 23
 
 const auth = (req, res, next) => {
-    if (!req.session.logged_in) {
+    if (!req.session.loggedIn) {
       res.redirect('/login');
     } else {
       next();

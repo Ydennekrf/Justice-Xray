@@ -67,7 +67,8 @@ router.get('edit/:id', auth, (req,res) => {
     })
 });
 
-router.get('/create', auth, (req, res) => {
+router.get('/create/', (req, res) => {
+    console.log("newpost")
     Post.findAll({
         where: {
             user_id: req.session.user_id
@@ -86,6 +87,7 @@ router.get('/create', auth, (req, res) => {
         }]
     })
     .then(dbpost => {
+        
         const posts = dbpost.map(post => post.get({ plain: true }));
         res.render('newPost', { posts, loggedIn: true});
     })

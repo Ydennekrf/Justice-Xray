@@ -43,15 +43,23 @@ router.get('/login', (req, res) => {
     }
     res.render('login');
 });
-// localhost:3001/newUser
+// localhost:3001/createUser
 // takes you to new user page
-router.get('/newUser', (req, res) => {
+router.get('/createUser', (req, res) => {
     if(req.session.loggedIn) {
         res.redirect('/');
         return;
     }
     res.render('createUser');
 });
+//localhost:3001/newPost
+// router.get('/newPost', (req, res) => {
+//     if (req.session.loggedIn) {
+//         res.redirect('/newPost');
+//         return;
+//     }
+//     res.render('newPost');
+// });
 // localhost:3001/post/
 router.get('/post/:id', (req, res) => {
     Post.findOne({

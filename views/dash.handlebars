@@ -1,12 +1,12 @@
 <div>
 <h2 class="head-text">dashboard: your posts</h2>
-<a href="/views/newPost.handlebars"><button type="button" class="btn btn-primary button">New Post</button></a>
+<a href="/login"><button type="button" class="btn btn-primary button">New Post</button></a>
 
 {{#if posts.length}}
 </div>
 
 {{#each posts as |post|}}
-{{>post-info post}}
+{{>postInfo post}}
 
 <a href="/dashboard/edit/{{post.id}}"><button type="button" class="btn btn-warning">Edit post</button></a>
 </div>

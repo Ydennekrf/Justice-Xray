@@ -45,7 +45,8 @@ router.get('/:id', (req,res) => {
 
 
 // creates a new user in DB
-router.post('/', auth, (req,res) => {
+router.post('/new', (req,res) => {
+    console.log('hello');
     if (req.session) {
         User.create({
             username: req.body.username,
@@ -95,7 +96,8 @@ router.post('/login', (req, res) => {
     })
 });
 //delete session cookie
-router.post('/logout', (req,res) => {
+router.delete('/logout', (req,res) => {
+    console.log('hello')
     if (req.session.loggedIn) {
         req.session.destroy(() => {
             res.status(204).end();

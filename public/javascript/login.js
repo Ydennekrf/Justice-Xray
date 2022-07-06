@@ -4,7 +4,7 @@ async function loginLogic(event) {
     const password = document.querySelector('#password-login').value;
 
     if (email && password) {
-        const response = await fetch('api/users/login', {
+        const response = await fetch('api/user/login', {
             method: 'POST',
             body: JSON.stringify({ email, password }),
             headers: { 'Content-Type': 'application/json'}
@@ -12,9 +12,9 @@ async function loginLogic(event) {
         if (response.ok) {
             document.location.replace('/dash');
         } else {
-            alert ('un able to login');
+            alert ('unable to login');
         }
     }
 };
 
-document.querySelector('.login').addEventListener('submit', loginLogic);
+document.querySelector('.login').addEventListener('click', loginLogic);
