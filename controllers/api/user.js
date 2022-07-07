@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {User, Post, Comment} = require('../../models/Index');
+const {User, Post, Comment} = require('../../models');
 const auth = require('../../utils/authenticate');
 const bcrypt = require('bcrypt');
 // gets all users
